@@ -1,0 +1,50 @@
+public class interfacesegregation {
+
+	public static void main(String[] args) {
+		 Printable basic = new BasicPrinter();
+	        basic.print();
+
+	        MultiFunctionPrinter multi = new MultiFunctionPrinter();
+	        multi.print();
+	        multi.scan();
+
+	}
+
+}
+interface Vehicle {
+    double calculateDistance();
+}
+
+
+class FuelCar implements Vehicle {
+    double fuelLiters;
+    double mileage; 
+
+    FuelCar(double fuelLiters, double mileage) {
+        this.fuelLiters = fuelLiters;
+        this.mileage = mileage;
+    }
+
+    public double calculateDistance() {
+        return fuelLiters * mileage;
+    }
+
+
+}
+
+
+class ElectricCar implements Vehicle {
+    double batteryPercent;
+    double efficiency; 
+
+    ElectricCar(double batteryPercent, double efficiency) {
+        this.batteryPercent = batteryPercent;
+        this.efficiency = efficiency;
+    }
+
+    public double calculateDistance() {
+        return batteryPercent * efficiency;
+    }
+
+}
+
