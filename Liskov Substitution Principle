@@ -1,0 +1,28 @@
+class Drama {
+    void play() {
+        System.out.println("Playing a drama...");
+    }
+}
+
+// Chinese Drama subclass
+class CDrama extends Drama {
+    void play() {
+        System.out.println("Playing Chinese drama: Hidden Love");
+    }
+}
+
+// Korean Drama subclass
+class KDrama extends Drama {
+    void play() {
+        System.out.println("Playing Korean drama: Queen of Tears");
+    }
+}
+
+public class LiskovPrinciple {
+    public static void main(String[] args) {
+        Drama cdrama = new CDrama();
+        Drama kdrama = new KDrama();
+        cdrama.play();
+        kdrama.play();
+    }
+}
